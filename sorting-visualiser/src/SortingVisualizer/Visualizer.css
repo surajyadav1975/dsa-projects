@@ -1,6 +1,8 @@
 .array-container {
     position: absolute;
+    margin-top: 50px;
     left: 100px;
+    width: 90%;
   }
   
   .array-bar {
@@ -9,4 +11,20 @@
     background-color: turquoise;
     display: inline-flex;
     margin: 0 1px;
+  }
+
+  .buttons{
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: space-between;
+  }
+
+  .slider{
+    width: 400px;
+    font-weight: bolder;
+    font-size: 18px;
+    text-decoration: solid;
+    display: flex;
+    justify-content: end;
+    align-items: center;
   }
