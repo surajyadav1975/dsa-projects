@@ -2,6 +2,7 @@ import React from 'react';
 import './Visualizer.css';
 import { mergeSortalgo } from '../SortingAlgos/MergeSortalgo';
 import { bubbleSortalgo } from '../SortingAlgos/BubbleSortalgo';
+import { quicksortalgo } from '../SortingAlgos/QuickSortalgo';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class SortingVisualizer extends React.Component{
@@ -49,7 +50,34 @@ export default class SortingVisualizer extends React.Component{
       }
     
       quickSort() {
-        
+        const animations = quicksortalgo(this.state.array);
+
+        for (let i = 0; i < animations.length; i++) {
+            const arrayBars = document.getElementsByClassName('array-bar');
+            const speed=document.getElementById("customRange3").value;
+            const [barOneIdx, barTwoIdx,pivotidx,baroneidxheight,bartwoidxheight,pivotidxheight] = animations[i];
+            if(i%2===0){
+                setTimeout(() => {
+                    arrayBars[barOneIdx].style.backgroundColor = "red";
+                    arrayBars[barTwoIdx].style.backgroundColor = "red";
+                    arrayBars[pivotidx].style.backgroundColor = "red";
+                },i*speed);
+            }
+            else{
+                if(bartwoidxheight<pivotidxheight){
+                    setTimeout(() => {
+                        const barOneStyle = arrayBars[barOneIdx].style;
+                        const bartwoStyle = arrayBars[barTwoIdx].style;
+                        barOneStyle.height = `${bartwoidxheight}px`;
+                        bartwoStyle.height = `${baroneidxheight}px`;
+                }, i*speed);
+                }
+                setTimeout(() => {
+                    arrayBars[barOneIdx].style.backgroundColor = "turquoise";
+                    arrayBars[barTwoIdx].style.backgroundColor = "turquoise";
+                },i*speed);
+            }
+        }
       }
     
       heapSort() {
