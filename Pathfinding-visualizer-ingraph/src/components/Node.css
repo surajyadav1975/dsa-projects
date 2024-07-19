@@ -1,0 +1,27 @@
+.node {
+    width: 25px;
+    height: 25px;
+    outline: 1px solid rgb(0, 0, 0);
+    box-shadow: 1px 1px 2px 2px slategray;
+    margin-left: 5px;
+    display: inline-block;
+  }
+  
+  .node-finish {
+    background-color: #5f0f0f;
+  }
+  
+  .node-start {
+    background-color: #B75B48;
+  }
+
+  .node-wall {
+    background-color: rgb(13, 31, 39);
+  }
+
+  .node-traverse {
+    background-color: #2f6368;
+  }
+  .node-yellow {
+    background-color: #B75B48;
+  }
