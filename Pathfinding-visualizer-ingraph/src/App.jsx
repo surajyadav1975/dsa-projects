@@ -67,7 +67,7 @@ function App() {
       const animate=dijkstra(grids,grids[startnoderow][startnodecol],grids[finishnoderow][finishnodecol]);
       const path=getNodesInShortestPathOrder(grids[10][40]);
 
-      if(path.length===1) return;
+      // if(path.length===1) return;
 
       for(let i=0;i<=animate.length;i++){
         if(i===animate.length){
@@ -124,6 +124,9 @@ function App() {
     setmouseispressed(false);
   }
 
+  function handledbleclick(row,col){
+    console.log(row,col);
+  }
 
   return (
     <>
@@ -139,6 +142,16 @@ function App() {
           }
           onMouseUp={() => handleMouseUp()}
           ></Grid>
+          {grids.length ===1 && <div>
+              <ul className="border-double border-4 border-slate-500 p-10 list-outside leading-6">
+                <li className="font-serif text-2xl p-2 no-underline hover:underline m-4">Click on "Genrate nodes" button to get the grid and play</li>
+                <li className="font-serif text-2xl p-2 no-underline hover:underline m-4">To change the starting node click on any node on the grid</li>
+                <li className="font-serif text-2xl p-2 no-underline hover:underline m-4">To create the walls you have to press the mouse and drag</li>
+                <li className="font-serif text-2xl p-2 no-underline hover:underline m-4">Click on "BFS" to find path using bfs and see the animation of bfs traversal</li>
+                <li className="font-serif text-2xl p-2 no-underline hover:underline m-4">Click on "Dijkstra" to find path using Dijkstra and see the animation of Dijkstra algo</li>
+                <li className="font-serif text-2xl p-2 no-underline hover:underline m-4">I haven't created a feature to change destination node</li>
+              </ul>
+          </div>}
         </div>
       </div>
     </>

@@ -1,7 +1,7 @@
 import React from "react";
 import './Node.css';
 import '../index.css';
-function Node({row, col, isstart, isfinish, iswall ,istraverse, ispath,handleclick, onMouseDown,onMouseEnter, onMouseUp,}) {
+function Node({row, col, isstart, isfinish, iswall ,istraverse, ispath,handleclick, onMouseDown,onMouseEnter, onMouseUp,handledbleclick}) {
 
   const extraClassName = isfinish
       ? 'node-finish'
