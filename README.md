@@ -1,7 +1,6 @@
 # DSA Projects
 
 #### SHORTEST-PATH-VISUALIZER-USING-DIJKSTRA-BFS : https://dsa-projects-mu.vercel.app/
-
 #### SORTING-VISUALISER : https://dsa-projects-iwk6.vercel.app/
 
 This repository contains two projects focused on Data Structures and Algorithms (DSA): a Shortest Path Finding Visualizer and a Sorting Visualizer. These projects provide interactive visualizations to help understand the workings of BFS, Dijkstra's algorithm, and various sorting algorithms.
