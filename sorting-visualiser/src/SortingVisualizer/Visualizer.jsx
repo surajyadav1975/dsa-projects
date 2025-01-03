@@ -118,31 +118,35 @@ export default class SortingVisualizer extends React.Component{
         const {array} = this.state;
     
         return (
-            <div className="array-container fixed flex flex-col w-full h-full">
-                <div className='some flex justify-center pb-20'>
-                {array.map((value, idx) => (
-                    <div className="array-bar" key={idx} style={{height: `${value}px`}}
-                    ></div>
-                ))}
-                </div>
-                <div className='flex justify-between p-5 footer'>
-                    <div className='flex flex-wrap'>
-                        <button className="bg-slate-300 border-solid border-2 border border-slate-800 rounded-lg text-center m-1 p-2 font-semibold font-serif text-slate-800 hover:shadow-lg shadow-indigo-500/40" onClick={() => this.resetArray()}>Generate New Array</button>
-                        <button className="bg-slate-300 border-solid border-2 border border-slate-800 rounded-lg text-center m-1 p-2 font-semibold font-serif text-slate-800 hover:shadow-lg shadow-indigo-500/40" onClick={() => this.mergeSort()}>Merge Sort</button>
-                        <button className="bg-slate-300 border-solid border-2 border border-slate-800 rounded-lg text-center m-1 p-2 font-semibold font-serif text-slate-800 hover:shadow-lg shadow-indigo-500/40" onClick={() => this.quickSort()}>Quick Sort</button>
-                        <button  className="bg-slate-300 border-solid border-2 border border-slate-800 rounded-lg text-center m-1 p-2 font-semibold font-serif text-slate-800 hover:shadow-lg shadow-indigo-500/40" onClick={() => this.heapSort()}>Heap Sort</button>
-                        <button className="bg-slate-300 border-solid border-2 border border-slate-800 rounded-lg text-center m-1 p-2 font-semibold font-serif text-slate-800 hover:shadow-lg shadow-indigo-500/40" onClick={() => this.bubbleSort()}>Bubble Sort</button>
-                    </div>
-                    <div className='flex flex-col justify-center items-center slider border-solid border-2 border border-slate-800 rounded-lg pl-3 pr-3 font-semibold font-serif text-slate-800 hover:shadow-lg shadow-indigo-500/40'>
-                        <label style={{width: `200px`, margin:`3px`}} for="customRange3" class="form-label text-center font-serif">Array length</label>
-                        <input type="range" class="form-range" min="10" max="220" step="10" id="customRange2"/>
-                    </div>
-                    <div className='flex flex-col justify-center items-center slider border-solid border-2 border border-slate-800 rounded-lg pl-3 pr-3 font-semibold font-serif text-slate-800 hover:shadow-lg shadow-indigo-500/40'>
-                        <label style={{width: `200px`, margin:`5px`}} for="customRange3" class="form-label text-center font-serif">Speed Of Algo</label>
-                        <input type="range" class="form-range" min="1" max="200" step="10" id="customRange3"/>
-                    </div>
-                </div>
-            </div>
+            <div className="array-container">
+    <div className="bars-wrapper">
+        {array.map((value, idx) => (
+            <div
+                className="array-bar"
+                key={idx}
+                style={{ height: `${value}px`, width: `${600 / array.length}px` }}
+            ></div>
+        ))}
+    </div>
+    <div className="footer">
+        <div className="buttons-group">
+            <button onClick={() => this.resetArray()}>Generate New Array</button>
+            <button onClick={() => this.mergeSort()}>Merge Sort</button>
+            <button onClick={() => this.quickSort()}>Quick Sort</button>
+            <button onClick={() => this.heapSort()}>Heap Sort</button>
+            <button onClick={() => this.bubbleSort()}>Bubble Sort</button>
+        </div>
+        <div className="slider">
+            <label htmlFor="customRange2">Array Length</label>
+            <input type="range" min="10" max="100" step="10" id="customRange2" />
+        </div>
+        <div className="slider">
+            <label htmlFor="customRange3">Speed of Algo</label>
+            <input type="range" min="1" max="200" step="10" id="customRange3" />
+        </div>
+    </div>
+</div>
+
         );
     }
 }
