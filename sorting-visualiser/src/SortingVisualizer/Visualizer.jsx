@@ -81,7 +81,40 @@ export default class SortingVisualizer extends React.Component{
       }
     
       heapSort() {
-      }
+
+        alert("still in progress, till then try other algo's");
+        // const animations = heapSortAlgo(this.state.array);
+        // const arrayBars = document.getElementsByClassName('array-bar');
+        // const speed = document.getElementById("customRange3").value;
+    
+        // for (let i = 0; i < animations.length; i++) {
+        //     const isColorChange = i % 3 !== 2;
+    
+        //     if (isColorChange) {
+        //         const [barOneIdx, barTwoIdx] = animations[i];
+        //         const color = i % 3 === 0 ? "red" : "turquoise";
+    
+        //         // Validate indices
+        //         if (arrayBars[barOneIdx] && arrayBars[barTwoIdx]) {
+        //             setTimeout(() => {
+        //                 arrayBars[barOneIdx].style.backgroundColor = color;
+        //                 arrayBars[barTwoIdx].style.backgroundColor = color;
+        //             }, i * speed);
+        //         }
+        //     } else {
+        //         const [barOneIdx, newHeight] = animations[i];
+    
+        //         // Validate index
+        //         if (arrayBars[barOneIdx]) {
+        //             setTimeout(() => {
+        //                 const barOneStyle = arrayBars[barOneIdx].style;
+        //                 barOneStyle.height = `${newHeight}px`;
+        //             }, i * speed);
+        //         }
+        //     }
+        // }
+    }
+    
     
       bubbleSort() {
         const animations = bubbleSortalgo(this.state.array);
